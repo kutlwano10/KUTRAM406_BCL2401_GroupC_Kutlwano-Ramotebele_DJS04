@@ -1,4 +1,7 @@
 import { books, authors, genres, BOOKS_PER_PAGE } from "./data.js";
+import { BookPreview } from "./components.js";
+
+
 
 let page = 1;
 let matches = books;
