@@ -1,5 +1,5 @@
 import { books, authors, genres, BOOKS_PER_PAGE } from "./data.js";
-import { BookPreview } from "./components.js";
+import "./components.js";
 
 
 
@@ -29,8 +29,7 @@ const getHtml = {
 const initializeBooks = () => {
   const starting = document.createDocumentFragment(); //it allows multiple inserts at the same time on the DOM
   for (const { author, id, image, title } of matches.slice(0, BOOKS_PER_PAGE)) {
-    const element = document.createElement("button");
-    element.classList = "preview";
+    const element = document.createElement("book-preview");
     element.setAttribute("data-preview", id);
 
     element.innerHTML = `
