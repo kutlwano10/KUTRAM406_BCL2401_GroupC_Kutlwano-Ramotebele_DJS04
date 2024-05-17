@@ -7,6 +7,7 @@ class BookPreview extends HTMLElement {
   connectedCallback() {
     const { id, title, author, image } = this.dataset;
 
+
     this.shadowRoot.innerHTML = /**Preview */ `
         <style>
         .preview {
@@ -70,7 +71,7 @@ class BookPreview extends HTMLElement {
             <img class="preview__image" src="${image}"/>
             <div class="preview__info">
                 <h3 class="preview__title">${title}</h3>
-                <div class="preview__author">${authors[author]}</div>
+                <div class="preview__author">${author}</div>
             </div>         
         </button>`;
   }
