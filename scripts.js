@@ -34,7 +34,7 @@ const initializeBooks = () => {
 
     element.dataset.id = id;
     element.dataset.title = title;
-    element.dataset.author= author;
+    element.dataset.author= authors[author];//bug fixed
     element.dataset.image = image;
 
 
