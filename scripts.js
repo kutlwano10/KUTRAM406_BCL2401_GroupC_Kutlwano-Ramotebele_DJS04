@@ -223,21 +223,29 @@ const saveSearchForm = (event) => {
   const newItems = document.createDocumentFragment();
 
   for (const { author, id, image, title } of result.slice(0, BOOKS_PER_PAGE)) {
-    const element = document.createElement("button");
-    element.classList = "preview";
-    element.setAttribute("data-preview", id);
+    const element = document.createElement("book-preview");
+    // element.classList = "preview";
+    // element.setAttribute("data-preview", id);
 
-    element.innerHTML = `
-            <img
-                class="preview__image"
-                src="${image}"
-            />
+    element.dataset.id = id
+    element.dataset.title = title
+    element.dataset.image = image
+    element.dataset.author = authors[author]
+    
+
+
+
+    // element.innerHTML = `
+    //         <img
+    //             class="preview__image"
+    //             src="${image}"
+    //         />
             
-            <div class="preview__info">
-                <h3 class="preview__title">${title}</h3>
-                <div class="preview__author">${authors[author]}</div>
-            </div>
-        `;
+    //         <div class="preview__info">
+    //             <h3 class="preview__title">${title}</h3>
+    //             <div class="preview__author">${authors[author]}</div>
+    //         </div>
+    //     `;
 
     newItems.appendChild(element);
   }

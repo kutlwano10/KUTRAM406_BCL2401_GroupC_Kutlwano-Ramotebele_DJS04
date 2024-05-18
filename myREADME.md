@@ -6,7 +6,8 @@
 
 **Solutions:**
 
-- i only refactored my initializeBook() ,i needed more time to finish the project , since i was starting to get an idea of what i had to you
+- i only refactored my initializeBook() ,i needed more time to finish the project , since i was starting to get an idea of what i had to you.
+- 
 
 **Improvements:**
 

@@ -5,7 +5,10 @@ class BookPreview extends HTMLElement {
     this.attachShadow({ mode: "open" });
   }
   connectedCallback() {
-    const { id, title, author, image } = this.dataset;
+    /**
+     * This dataset will represent the properties of the matches
+     */
+    const { id, title, author, image } = this.dataset;//Setting object properties
 
 
     this.shadowRoot.innerHTML = /**Preview */ `
@@ -77,3 +80,14 @@ class BookPreview extends HTMLElement {
   }
 }
 customElements.define("book-preview", BookPreview);
+
+// class BookPreviewSearch extends HTMLElement {
+//     constructor() {
+//         super() 
+//         this.attachShadow({mode:'open'})
+//     }
+//     connectedCallback() {
+//         this.shadowRoot.innerHTML = `
+//         `
+//     }
+// }
