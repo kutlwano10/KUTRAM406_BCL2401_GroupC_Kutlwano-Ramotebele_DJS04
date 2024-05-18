@@ -34,7 +34,7 @@ const initializeBooks = () => {
 
     element.dataset.id = id;
     element.dataset.title = title;
-    element.dataset.author= authors[author];//bug fixed
+    element.dataset.author= authors[author];//bug fixed : wanted to get the values
     element.dataset.image = image;
 
 
@@ -178,7 +178,10 @@ const changeThemes = () => {
 };
 
 
-//SAVES THE INPUTED SEARCH
+/**
+ * 
+ * @param {*} event - Prevents Default when Saving Search
+ */
 const saveSearchForm = (event) => {
   event.preventDefault();
 
@@ -224,28 +227,11 @@ const saveSearchForm = (event) => {
 
   for (const { author, id, image, title } of result.slice(0, BOOKS_PER_PAGE)) {
     const element = document.createElement("book-preview");
-    // element.classList = "preview";
-    // element.setAttribute("data-preview", id);
 
     element.dataset.id = id
     element.dataset.title = title
     element.dataset.image = image
     element.dataset.author = authors[author]
-    
-
-
-
-    // element.innerHTML = `
-    //         <img
-    //             class="preview__image"
-    //             src="${image}"
-    //         />
-            
-    //         <div class="preview__info">
-    //             <h3 class="preview__title">${title}</h3>
-    //             <div class="preview__author">${authors[author]}</div>
-    //         </div>
-    //     `;
 
     newItems.appendChild(element);
   }
@@ -277,21 +263,12 @@ const generateMoreBooksList = () => {
     page * BOOKS_PER_PAGE,
     (page + 1) * BOOKS_PER_PAGE
   )) {
-    const element = document.createElement("button");
-    element.classList = "preview";
-    element.setAttribute("data-preview", id);
+    const element = document.createElement("book-preview");
 
-    element.innerHTML = `
-              <img
-                  class="preview__image"
-                  src="${image}"
-              />
-              
-              <div class="preview__info">
-                  <h3 class="preview__title">${title}</h3>
-                  <div class="preview__author">${authors[author]}</div>
-              </div>
-          `;
+    element.dataset.id = id 
+    element.dataset.title = title
+    element.dataset.author = authors[author]
+    element.dataset.image = image
 
     fragment.appendChild(element);
   }
